@@ -6,9 +6,9 @@ public class ShuffleDeck {
 	
 	Random r = new Random();
 	
-	String[] shuffle(String[] speelKaarten) {
+	Kaart[] shuffle(Kaart[] speelKaarten) {
 		
-		String[] shuffled = new String[speelKaarten.length];
+		Kaart[] shuffled = new Kaart[speelKaarten.length];
 
 		for(int i = 0; i < speelKaarten.length; i++) {
 			int plek = r.nextInt(52);
@@ -17,7 +17,15 @@ public class ShuffleDeck {
 			}else {
 				i--;
 			}
-		}		
+		}	
+
 		return shuffled;
+	}
+	
+	int kaartNummer = 0; 
+	
+	Kaart bovensteKaart(Kaart[] deck){
+		
+		return deck[kaartNummer++];
 	}
 }

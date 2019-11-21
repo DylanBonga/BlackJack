@@ -1,24 +1,26 @@
 package blackjack;
 
+
+
 public class Kaart {
 	String naam;
 	String soort;
 	int value;
-	int kaart_nummer = 0;
-	String getKaart(String[] deck) {
-		String n_card = deck[kaart_nummer];
-		kaart_nummer++;
-		return n_card;
+	
+	Kaart(String s, String waarde, int w_getal){
+		naam = "["+s+" "+waarde+"]";
+		soort = s;
+		value = w_getal;
 	}
-	int getValue(String kaart) {
-		char k_v = kaart.charAt(kaart.length()-1);
-		if(k_v == 'A') {
-			return 11;
-		}else if(k_v == 'K' || k_v == 'V' || k_v == 'B' || k_v == '0') {
-			return 10;
-		}else {
-			int ch_int = Character.getNumericValue(k_v);
-			return ch_int;
-		}
+	
+	int kaart_nummer = 0;
+	Kaart getKaart(Kaart[] deck) {
+		kaart_nummer++;
+		return deck[kaart_nummer];
+	}
+	
+	int getValue() {
+		return value;
+		
 	}
 }
