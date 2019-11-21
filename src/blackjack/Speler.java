@@ -18,7 +18,11 @@ public class Speler {
 		hand.add(card);
 		printHand();
 		int total_v = card.getValue();
+		if(total_v == 11 && score > 10) {
+			score += 1;
+		}else {
 		score += total_v;
+		}
 	}
 	void printHand() {
 		System.out.print("Speler: ");

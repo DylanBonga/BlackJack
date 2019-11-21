@@ -60,7 +60,7 @@ public class BlackJack {
 					play = false;
 				}
 			}		
-			if(speler1.score < 21) {
+			if(speler1.score < 22) {
 				JackBlack.reveal();
 				while(JackBlack.score < 16) {
 					JackBlack.play(d.bovensteKaart(geschudde_deck));
